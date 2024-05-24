@@ -3,31 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  background-color: #ffffff;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #ffffff;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.code-block {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-family: "Courier New", Courier, monospace;
+  white-space: pre-wrap;
+}
+.code-block .key {
+  color: green;
+}
+.copy-button {
+  background-color: #f1f5f9;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: 700;
+}
+.copy-button:hover {
+  background-color: #d1d5db;
 }
