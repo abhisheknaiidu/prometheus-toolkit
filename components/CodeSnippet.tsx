@@ -3,12 +3,14 @@ import React from "react";
 import yaml from "js-yaml";
 
 const CodeSnippet = ({ rule }: { rule: Rules }) => {
+  const [copy, setCopy] = React.useState<boolean>(false);
   const handleCopy = async () => {
     try {
       const yamlString = yaml.dump(rule);
 
       console.log(yamlString);
       await navigator.clipboard.writeText(yamlString);
+      setCopy(true);
     } catch (err) {
       console.error("Failed to copy: ", err);
     }
@@ -45,11 +47,11 @@ const CodeSnippet = ({ rule }: { rule: Rules }) => {
         </pre>
       </figure>
       <button
-        className="flex items-center copy-button absolute top-0 right-0"
+        className="flex items-center copy-button absolute uppercase top-0 right-0"
         onClick={handleCopy}
       >
         <img src="/icons/copy.png" alt="Copy" className="w-3 h-3 mr-1" />
-        COPY
+        {copy ? "Copied" : "Copy"}
       </button>
     </div>
   );

@@ -24,7 +24,7 @@ export default function Home() {
           .reduce((acc, key) => {
             acc[key] = category.subcategories[key];
             return acc;
-          }, {} as Record<string, Subcategory>);
+          }, {});
 
         return { ...category, subcategories: filteredSubcategories };
       })

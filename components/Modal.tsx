@@ -103,7 +103,7 @@ const Modal = ({ subcategory }: { subcategory: Subcategory }) => {
                         </div>
                       </div>
 
-                      <CodeSnippet rule={rule} />
+                      <CodeSnippet rule={rule} key={index} />
                     </div>
                   ))}
                 </div>
